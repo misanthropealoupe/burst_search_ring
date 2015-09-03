@@ -58,7 +58,7 @@ ext_preprocess = Extension(
     extra_link_args=LINK_FLAGS,
     define_macros=MACROS,
     )
-ext_preprocess = Extension(
+ext_ringbuffer = Extension(
     "burst_search.ringbuffer",
     ["burst_search/ringbuffer.pyx", "src/ring_buffer.c"],
     include_dirs=INCLUDE_DIRS + [np.get_include(), "src/"],
@@ -70,7 +70,7 @@ ext_preprocess = Extension(
     )
 
 
-EXTENSIONS = [ext_dedisperse, ext_search, ext_preprocess]
+EXTENSIONS = [ext_dedisperse, ext_search, ext_preprocess, ext_ringbuffer]
 
 
 SCRIPTS = [
