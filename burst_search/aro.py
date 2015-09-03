@@ -12,7 +12,7 @@ import matplotlib as mpl
 mpl.use('Agg')
 import matplotlib.pyplot as plt
 from aro_tools import power_data_io, misc
-from aro_tools.power_data_io import MockRing as Ring
+from aro_tools.power_data_io import MockRing
 
 from . import preprocess
 from . import dedisperse
@@ -88,7 +88,7 @@ class FileSearch(object):
         self._filename = filename
         scrunch = kwargs.get('scrunch', 1)
         self._scrunch = scrunch    # For identifying process.
-        self._data_ring = power_data_io.Ring(filename, scrunch)
+        self._data_ring = MockRing(filename, scrunch)
         #self._data_ring = power_data_io.MockRing(filename, scrunch)
 
 
