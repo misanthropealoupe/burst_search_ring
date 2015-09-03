@@ -12,6 +12,7 @@ import matplotlib as mpl
 mpl.use('Agg')
 import matplotlib.pyplot as plt
 from aro_tools import power_data_io, misc
+from power_data_io import MockRing as Ring
 
 from . import preprocess
 from . import dedisperse
