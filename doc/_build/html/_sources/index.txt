@@ -1,0 +1,23 @@
+==========================
+busrt_search Documentation
+==========================
+
+.. currentmodule:: burst_search
+
+
+Packages
+========
+
+.. autosummary::
+    :toctree: generated/
+
+   preprocess
+   dedisperse
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

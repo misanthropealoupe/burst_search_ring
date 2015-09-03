@@ -1,0 +1,156 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>burst_search.preprocess &mdash; burst_search 0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'../',
+        VERSION:'0',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+    <link rel="top" title="burst_search 0 documentation" href="../index.html"/> 
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> burst_search</a>
+        <form class="wy-form" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search docs" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix">
+        
+        
+            <ul>
+<li><a class="reference internal" href="#">burst_search.preprocess</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="/">burst_search</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <ul class="wy-breadcrumbs">
+  <li><a href="../index.html">Docs</a> &raquo;</li>
+  <li><a href="">burst_search.preprocess</a></li>
+  
+</ul>
+<hr/>
+
+          
+  <div class="section" id="module-burst_search.preprocess">
+<span id="burst-search-preprocess"></span><h1>burst_search.preprocess<a class="headerlink" href="#module-burst_search.preprocess" title="Permalink to this headline">¶</a></h1>
+<p>Preprocessing data for fast radio burst searches.</p>
+<p>This module contains, bandpass calibration, RFI flagging, etc.</p>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="generated/burst_search.preprocess.remove_periodic.html#burst_search.preprocess.remove_periodic" title="burst_search.preprocess.remove_periodic"><tt class="xref py py-obj docutils literal"><span class="pre">remove_periodic</span></tt></a>(data,&nbsp;period)</td>
+<td>Remove periodic time compenent from data.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/burst_search.preprocess.remove_noisy_freq.html#burst_search.preprocess.remove_noisy_freq" title="burst_search.preprocess.remove_noisy_freq"><tt class="xref py py-obj docutils literal"><span class="pre">remove_noisy_freq</span></tt></a>(data,&nbsp;sigma_threshold)</td>
+<td>Flag frequency channels with high variance.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/burst_search.preprocess.noisecal_bandpass.html#burst_search.preprocess.noisecal_bandpass" title="burst_search.preprocess.noisecal_bandpass"><tt class="xref py py-obj docutils literal"><span class="pre">noisecal_bandpass</span></tt></a>(data,&nbsp;cal_spectrum,&nbsp;cal_period)</td>
+<td>Remove noise-cal and use to bandpass calibrate.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="generated/burst_search.preprocess.remove_outliers.html#burst_search.preprocess.remove_outliers" title="burst_search.preprocess.remove_outliers"><tt class="xref py py-obj docutils literal"><span class="pre">remove_outliers</span></tt></a>(data,&nbsp;sigma_threshold)</td>
+<td>Flag outliers within frequency channels.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="generated/burst_search.preprocess.remove_continuum.html#burst_search.preprocess.remove_continuum" title="burst_search.preprocess.remove_continuum"><tt class="xref py py-obj docutils literal"><span class="pre">remove_continuum</span></tt></a>(data)</td>
+<td>Calculates a contiuum template and removes it from the data.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          <footer>
+  
+
+  <hr/>
+
+  <p>
+      &copy; Copyright 2013-2015, Kiyoshi Masui.
+  </p>
+
+  <a href="https://www.github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="http://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+</body>
+</html>

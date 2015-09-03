@@ -1,0 +1,63 @@
+#! /usr/bin/python
+"""Search ARO ring file for fast radio bursts.
+
+"""
+
+import time
+import argparse
+from os import path
+import logging
+import multiprocessing
+
+import numpy as np
+import h5py
+
+from burst_search import aro
+
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.addHandler(logging.StreamHandler())
+
+
+# Command line arguments.
+parser = argparse.ArgumentParser(description='Search ARO intensity ring for FRBs.')
+parser.add_argument(
+        "file",
+        type=str,
+        help="ARO intensity ring file to search.",
+        )
+parser.add_argument(
+        '-p', '--show_plot',
+        type=bool,
+        default=False,
+        help="Does nothing right now."
+        )
+
+
+
+if __name__ == "__main__":
+    args = parser.parse_args()
+
+    filename = args.file
+    #if len(files) == 1:
+    #    files = glob.glob(files[0])
+
+
+    Searcher = aro.FileSearch(filename=filename)
+    print filename
+
+    act_str = 'print,save_plot_dm'
+    if args.show_plot:
+        act_str = act_str + ', show_plot_dm'
+    print 'doing actions \n' + act_str
+    Searcher.set_trigger_action(act_str)
+
+    # To write dedispered data to disk.
+    #out_filename = path.splitext(path.basename(filename))[0] + ".h5"
+    #out_file = h5py.File(out_filename)
+    #Searcher.set_dedispersed_h5(out_file)
+
+    Searcher.search_real_time()
+
+
