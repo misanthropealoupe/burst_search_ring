@@ -60,7 +60,7 @@ ext_preprocess = Extension(
     )
 ext_preprocess = Extension(
     "burst_search.ringbuffer",
-    ["burst_search/ringbuffer.pyx", "src/ring_buffer.c"]
+    ["burst_search/ringbuffer.pyx", "src/ring_buffer.c"],
     include_dirs=INCLUDE_DIRS + [np.get_include(), "src/"],
     library_dirs = LIBRARY_DIRS,
     depends=["ring_buffer.h"],
